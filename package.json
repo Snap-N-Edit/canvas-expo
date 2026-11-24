@@ -1,0 +1,68 @@
+{
+  "name": "@snapnedit/expo",
+  "version": "0.1.0",
+  "description": "The snapnedit AI photo editor for Expo apps: the React Native component plus photo-library, camera and save-to-file helpers. Works in Expo Go.",
+  "license": "MIT",
+  "author": "snapnedit",
+  "homepage": "https://snapnedit.com/docs/embed-native",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Snap-N-Edit/canvas-expo.git"
+  },
+  "bugs": "https://github.com/Snap-N-Edit/canvas-expo/issues",
+  "keywords": [
+    "expo",
+    "react-native",
+    "photo-editor",
+    "image-editor",
+    "ai",
+    "background-removal",
+    "snapnedit"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@snapnedit/react-native": "^0.1.0"
+  },
+  "peerDependencies": {
+    "expo": ">=52",
+    "expo-file-system": ">=19",
+    "expo-image-picker": ">=16",
+    "react": ">=18",
+    "react-native": ">=0.76",
+    "react-native-webview": ">=13"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "expo-file-system": "^58.0.14",
+    "expo-image-picker": "^58.0.10",
+    "react": "^19.3.1",
+    "react-native": "^0.88.1",
+    "react-native-webview": "^14.0.1",
+    "typescript": "^6.0.3",
+    "vitest": "^4.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
